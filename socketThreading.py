@@ -61,6 +61,7 @@ class SocketThread(threading.Thread):
                                 self.gpslist_lon.insert(0,lon)
                                 coordinates = {'Latitude' : lat, 'Longitude' : lon,'IMEI': IMEI, 'timestamp' : dateTimeIND} 
                                 self.count += 1
+                                
                                 cli.put_object(
                                     Body=str(coordinates),
                                     Bucket='ec2-obd2-bucket',
